@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'fast_helper'
 require 'dna/genome'
 
 describe DNA::Genome do

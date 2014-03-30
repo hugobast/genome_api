@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'fast_helper'
 require "dna/genome/coding_sequence_set"
 
 describe DNA::CodingSequenceSet do

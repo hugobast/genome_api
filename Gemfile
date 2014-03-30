@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bio'
-gem 'pry'
-gem 'rspec'
+gem 'pry', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
