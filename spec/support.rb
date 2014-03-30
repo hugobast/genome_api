@@ -19,4 +19,25 @@ def create_organism!
   species
 end
 
+def create_organisms!
+  species = Species.create! name: "E. coli"
+
+  Sequence.create!(
+    species: species, gene: "gyrA",
+    translation: "MSKSYLKNF", dna: "atgtcaaagtcgtatttaaa"
+  )
+
+  species = Species.create! name: "S. Aureus"
+
+  Sequence.create!(
+    species: species, gene: "gyrA",
+    translation: "MSKSYLKNF", dna: "atgtcaaagtcgtaaaattt"
+  )
+
+  species = Species.create! name: "C. Diff"
+
+  Sequence.create!(
+    species: species, gene: "gyrA",
+    translation: "MSKSYLKNF", dna: "atgtcaaagtcgtacccaaa"
+  )
 end
