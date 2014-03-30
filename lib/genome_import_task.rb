@@ -27,7 +27,7 @@ class GenomeImportTask
 
   def create_sequence(coding_sequence, dna, species)
     begin
-      sequence = sequence_with_protein(coding_sequence.gene)
+      sequence = sequence_with_gene(species, coding_sequence.gene)
 
       sequence.update_attributes(
         species: species,
@@ -39,8 +39,8 @@ class GenomeImportTask
     end
   end
 
-  def sequence_with_protein(protein_id)
-    Sequence.find_or_create_by_gene(protein_id)
+  def sequence_with_gene(species, gene)
+    Sequence.find_or_create_by(species: species, gene: gene)
   end
 
   def species_with_name(name)
