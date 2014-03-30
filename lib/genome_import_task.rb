@@ -26,13 +26,17 @@ class GenomeImportTask
   end
 
   def create_sequence(coding_sequence, dna, species)
-    sequence = sequence_with_protein(coding_sequence.protein_id)
+    begin
+      sequence = sequence_with_protein(coding_sequence.gene)
 
-    sequence.update_attributes(
-      species: species,
-      translation: coding_sequence.translation,
-      dna: dna.sequence_range(coding_sequence.range)
-    )
+      sequence.update_attributes(
+        species: species,
+        translation: coding_sequence.translation,
+        dna: dna.sequence_range(coding_sequence.range)
+      )
+    rescue NoMethodError
+      # Nothing can be done, missing gene means we won't use it.
+    end
   end
 
   def sequence_with_protein(protein_id)
