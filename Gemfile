@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'bio'
 gem 'pry', group: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
+gem 'database_cleaner', group: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
