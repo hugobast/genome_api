@@ -4,7 +4,7 @@ require "support"
 describe SpeciesController do
 
   before do
-    create_organism!
+    @species = create_organism!
   end
 
   describe "GET 'index'" do
@@ -16,7 +16,7 @@ describe SpeciesController do
 
   describe "GET 'show'" do
     it "returns all species gene sequences json response" do
-      get :show, id: 1, format: :json
+      get :show, id: @species.id, format: :json
       expect(response.body).to match("gidA")
       expect(response.body).to match("dnaA")
       expect(response.body).to match("gyrA")

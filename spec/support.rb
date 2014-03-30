@@ -15,4 +15,8 @@ def create_organism!
     species: species, gene: "gyrA",
     translation: "SVENFITE", dna: "ataactgatataggtgtatt"
   )
+
+  species
+end
+
 end
